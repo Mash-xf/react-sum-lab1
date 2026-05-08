@@ -42,28 +42,40 @@ function Form({ addProject }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="project-form">
-      <label htmlFor="projectName">Project Name</label>
+    <div className="card mb-8">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label htmlFor="projectName" className="block text-sm font-medium text-gray-700 mb-2">
+            Project Name
+          </label>
+          <input
+            id="projectName"
+            type="text"
+            placeholder="Add project Name"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="input-field"
+          />
+        </div>
 
-      <input
-        type="text"
-        placeholder="Add project Name"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+        <div>
+          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+            Description
+          </label>
+          <textarea
+            id="description"
+            placeholder="Add project description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="textarea-field"
+          ></textarea>
+        </div>
 
-      <label htmlFor="description">Description</label>
-
-      <textarea
-        placeholder="Add project description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      ></textarea>
-
-      <button type="submit">
-        Add Project
-      </button>
-    </form>
+        <button type="submit" className="button-primary">
+          Add Project
+        </button>
+      </form>
+    </div>
   );
 }
 

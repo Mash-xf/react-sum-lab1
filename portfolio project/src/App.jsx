@@ -36,12 +36,15 @@ function App() {
   })
 
   return (
-    <>
-      <Title />
-      <Form addProject={addProject} />
-      <SearchBar onSearch={setSearchTerm} />
-      <ProjectList projects={searchedProjects} />
-    </>
+    <div className="app-shell">
+      <div className="app-container">
+        <Title />
+        <hr className="separator" />
+        <Form addProject={addProject} />
+        <SearchBar onSearch={setSearchTerm} />
+        <ProjectList projects={searchedProjects} />
+      </div>
+    </div>
   )
 }
 
