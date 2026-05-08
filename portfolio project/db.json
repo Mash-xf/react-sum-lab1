@@ -14,6 +14,11 @@
       "id": "3",
       "title": "E-commerce website",
       "description": "This is an e-commerce website built with React and Tailwind CSS. It allows users to browse products, add items to their cart, and complete purchases."
+    },
+    {
+      "title": "chatting App",
+      "description": "it helps the users to chat freely without restriction and it helps users to have end to end encrpted\n",
+      "id": "svEnDgY"
     }
   ]
 }
