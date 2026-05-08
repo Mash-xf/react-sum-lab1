@@ -1,25 +1,24 @@
-import React from "react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Form({ addProject }) {
-  const [project, setProject] = useState("");
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (project.trim() === "" || description.trim() === "") {
+    if (title.trim() === "" || description.trim() === "") {
       alert("Please fill in both fields.");
       return;
     }
 
     const newProject = {
-      project,
+      title,
       description,
     };
 
     try {
-      const response = await fetch("http://localhost:3000/projects", {
+      const response = await fetch("http://localhost:3500/projects", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,12 +26,15 @@ function Form({ addProject }) {
         body: JSON.stringify(newProject),
       });
 
+      if (!response.ok) {
+        throw new Error("Failed to add project");
+      }
+
       const data = await response.json();
 
-      // Optional: update UI immediately
       addProject(data);
 
-      setProject("");
+      setTitle("");
       setDescription("");
     } catch (error) {
       console.error("Error adding project:", error);
@@ -40,15 +42,14 @@ function Form({ addProject }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form onSubmit={handleSubmit} className="project-form">
       <label htmlFor="projectName">Project Name</label>
 
       <input
         type="text"
         placeholder="Add project Name"
-        value={project}
-        onChange={(e) => setProject(e.target.value)}
-        className="border border-gray-300 rounded p-2"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
       />
 
       <label htmlFor="description">Description</label>
@@ -57,13 +58,9 @@ function Form({ addProject }) {
         placeholder="Add project description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="border border-gray-300 rounded p-2"
       ></textarea>
 
-      <button
-        type="submit"
-        className="bg-blue-500 text-white rounded p-2"
-      >
+      <button type="submit">
         Add Project
       </button>
     </form>
