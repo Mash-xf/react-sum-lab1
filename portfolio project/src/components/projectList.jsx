@@ -1,4 +1,8 @@
 function ProjectList({ projects }) {
+    if (projects.length === 0) {
+        return <p className="empty-projects">No projects found.</p>;
+    }
+
     return (       
         <div className="project-grid">      
             {projects.map((project) => (
