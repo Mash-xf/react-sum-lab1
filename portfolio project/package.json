@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+
+ "homepage": "https://Mash-xf.github.io/my-react-app",
   "scripts": {
     "dev": "vite",
     "server": "json-server --watch db.json --port 3500",
     "build": "vite build",
     "lint": "eslint .",
     "test": "vitest run",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "json-server": "^0.17.4",
