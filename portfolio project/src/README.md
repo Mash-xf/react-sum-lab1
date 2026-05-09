@@ -47,3 +47,6 @@ src/
 │── App.jsx
 │── main.jsx
 │── index.css
+
+## Author
+-Felix Macharia

@@ -6,7 +6,28 @@ import ProjectList from './components/projectList'
 import './App.css'
 
 function App() {
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState([
+    {
+      "id": "1",
+      "title": "Voting poll app",
+      "description": "This is a voting poll app built with React and Tailwind CSS. It allows users to create and participate in polls, view results, and share polls with others."
+    },
+    {
+      "id": "2",
+      "title": "Blog platform",
+      "description": "This is a simple blog platform built with React and Tailwind CSS. It allows users to create, edit, and delete blog posts, as well as view a list of all posts."
+    },
+    {
+      "id": "3",
+      "title": "E-commerce website",
+      "description": "This is an e-commerce website built with React and Tailwind CSS. It allows users to browse products, add items to their cart, and complete purchases."
+    },
+    {
+      "title": "chatting App",
+      "description": "it helps the users to chat freely without restriction and it helps users to have end to end encrpted\n",
+      "id": "svEnDgY"
+    }
+  ])
   const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
