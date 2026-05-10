@@ -1,10 +1,10 @@
 {
-  "name": "portfolio-project",
+  "name": "react-sum-lab1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
 
-  "homepage": "https://mash-xf.github.io/portfolio-project/",
+  "homepage": "https://mash-xf.github.io/react-sum-lab1/",
   "scripts": {
     "dev": "vite",
     "server": "json-server --watch db.json --port 3500",
